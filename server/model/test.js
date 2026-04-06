@@ -19,6 +19,7 @@ bcrypt.hash(plainPassword, 10, (err, hashedPassword) => {
     const newMember = new Members({
         firstname: 'admin',
         lastname: 'rs',
+        gender: 'male',
         email: 'rs@example.com',
         password: hashedPassword, // Insert hashed password
         phone: '1234567890',

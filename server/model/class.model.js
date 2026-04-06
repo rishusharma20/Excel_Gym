@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 const classSchema = new Schema({
     className: { type: String, required: true },
     trainersId: { type: Schema.Types.ObjectId, ref: 'Trainers', required: true },
+    trainersName: { type: String },
     schedule: { type: String },
     price: { type: Number }
 });
