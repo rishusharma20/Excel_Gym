@@ -12,7 +12,7 @@ const bookingRouter = require('./router/booking.router');
 const app=express();
 dotenv.config();
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: true,
   optionsSuccessStatus: 200 ,
   credentials: true
 };
@@ -26,6 +26,10 @@ app.use('/api', adminRouter);
 app.use('/api', bookingRouter);
 connect();
 
-app.listen(process.env.PORT||3000, () => {
-  console.log(`running on port ${process.env.PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(process.env.PORT||3000, () => {
+    console.log(`running on port ${process.env.PORT}`);
+  });
+}
+
+module.exports = app;

@@ -1,0 +1,7 @@
+{
+  "name": "excel-gym-root",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd Client && npm install && npm run build && cd .. && rm -rf public && cp -r Client/build public"
+  }
+}
